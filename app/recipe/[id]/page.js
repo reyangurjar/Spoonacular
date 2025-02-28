@@ -2,7 +2,7 @@
 async function getData(recipeId) {
   // Todo - add this url as a env and then make a request to proces..../api/search/.... ok?
   const res = await fetch(
-    `${process.env.APP_URL}/api/recipe/${recipeId}`
+    `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/recipe/${recipeId}`
   );
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
