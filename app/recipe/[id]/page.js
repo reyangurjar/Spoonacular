@@ -19,7 +19,7 @@ export default async function RecipePage(context) {
   return (
     <>
      {data!==null ? <div>
-      <div className="max-w-4xl mx-auto px-4 py-12 md:px-6 md:py-16">
+      <div key={data.title} className="max-w-4xl mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="space-y-8 md:space-y-12">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             {data.title}
@@ -38,7 +38,7 @@ export default async function RecipePage(context) {
               <ol className="space-y-4 text-lg md:text-xl">
 
               {data.analyzedInstructions[0].steps.map((instruction, index) => (
-                <li className="flex items-start">
+                <li key={index} className="flex items-start">
                 <span className="font-bold mr-2">{instruction.number}.</span>
                 <p>
                   {instruction.step}
